@@ -43,6 +43,19 @@ class VetorNaoOrdenado:
                     duplos.append(valor[s])
         return duplos
 
+    def duplicatas_revanche(self, valor, limite):
+        recorte = limite*[0]
+        duplos = []
+
+        for i in valor:
+            recorte [i -1] = recorte [i -1] +1
+        
+        for i in range (len(recorte)):
+            if recorte[i] > 1:
+                duplos.append(i +1)
+        return duplos
+
+
 vetor = VetorNaoOrdenado(8)
 # =====================================
 # ADICIONEM TESTES A PARTIR DAQUI
@@ -51,11 +64,11 @@ vetor.insere(5)
 vetor.insere(4)
 vetor.insere(7)
 vetor.insere(1)
-vetor.insere(6)
+vetor.insere(4)
 vetor.insere(4)
 vetor.insere(1)
 vetor.insere(8)
 
-
 vetor.imprime()
 print( vetor.duplicatas(vetor.valores) )
+#print(vetor.duplicatas_revanche(vetor.valores, vetor.ultima_posicao +1))
